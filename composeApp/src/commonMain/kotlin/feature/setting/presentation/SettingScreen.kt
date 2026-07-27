@@ -18,7 +18,6 @@ import ui.utils.ContentType
 @Composable
 fun SettingScreen(
     onFeedbackClick: () -> Unit,
-    onHoYoLabClick: () -> Unit,
     onDailyTrackerClick: () -> Unit
 ) {
     val viewModel: SettingViewModel = koinViewModel()
@@ -30,7 +29,6 @@ fun SettingScreen(
 
             SettingAction.ClickFeedback -> onFeedbackClick()
 
-            SettingAction.ClickHoYoLab -> onHoYoLabClick()
 
             else -> {
                 coroutineScope.launch {

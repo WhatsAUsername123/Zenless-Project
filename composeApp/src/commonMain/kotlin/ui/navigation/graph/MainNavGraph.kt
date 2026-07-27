@@ -16,6 +16,7 @@ import ui.navigation.NavActions
 import ui.navigation.graph.app.agentNavGraph
 import ui.navigation.graph.app.homeNavGraph
 import ui.navigation.graph.app.settingNavGraph
+import ui.navigation.graph.app.accountNavGraph
 
 @Composable
 fun MainNavGraph(
@@ -33,6 +34,7 @@ fun MainNavGraph(
     ) {
         homeNavGraph(navActions)
         agentNavGraph(navActions)
+        accountNavGraph(navActions)
         settingNavGraph(navActions)
     }
 }

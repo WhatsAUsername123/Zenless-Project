@@ -9,8 +9,10 @@ import kotlinx.serialization.Serializable
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.StringResource
 import zzzarchive.composeapp.generated.resources.Res
+import zzzarchive.composeapp.generated.resources.account
 import zzzarchive.composeapp.generated.resources.agents
 import zzzarchive.composeapp.generated.resources.home
+import zzzarchive.composeapp.generated.resources.ic_account
 import zzzarchive.composeapp.generated.resources.ic_help
 import zzzarchive.composeapp.generated.resources.ic_home
 import zzzarchive.composeapp.generated.resources.ic_people
@@ -20,6 +22,11 @@ import zzzarchive.composeapp.generated.resources.unknown
 
 @Serializable
 sealed class MainFlow(val startScreen: Screen) {
+
+    @Serializable
+    data object Account : MainFlow(
+        startScreen = Screen.HoYoLabSync
+    )
     @Serializable
     data object Home : MainFlow(
         startScreen = Screen.Home
@@ -60,10 +67,17 @@ private val topSettingDestination = TopDestination(
     textRes = Res.string.setting
 )
 
+private val topAccountDestination = TopDestination(
+    route = MainFlow.Account,
+    iconRes = Res.drawable.ic_account,
+    textRes = Res.string.account
+)
+
 val NAV_RAIL_MAIN_FLOW =
     listOf(
         topHomeDestination,
         topAgentDestination,
+        topAccountDestination,
         topSettingDestination
     )
 
@@ -71,5 +85,6 @@ val NAV_BOTTOM_MAIN_FLOW =
     listOf(
         topHomeDestination,
         topAgentDestination,
+        topAccountDestination,
         topSettingDestination
     )

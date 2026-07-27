@@ -8,6 +8,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import feature.agent.data.database.AgentsListDB
 import feature.cover.data.database.CoverImagesListDB
+import feature.dailytracker.data.database.DailyTaskDB
 import feature.hoyolab.data.database.HoYoLabAccountDB
 import kotlinx.cinterop.ExperimentalForeignApi
 import platform.Foundation.NSDocumentDirectory
@@ -45,6 +46,13 @@ actual class RoomDatabaseFactory {
     actual fun createHoYoLabAccountDatabase(): RoomDatabase.Builder<HoYoLabAccountDB> {
         val dbFile = documentDirectory() + "/${HoYoLabAccountDB.DATABASE_NAME}"
         return Room.databaseBuilder<HoYoLabAccountDB>(
+            name = dbFile
+        )
+    }
+
+    actual fun createDailyTaskDatabase(): RoomDatabase.Builder<DailyTaskDB> {
+        val dbFile = documentDirectory() + "/${DailyTaskDB.DATABASE_NAME}"
+        return Room.databaseBuilder<DailyTaskDB>(
             name = dbFile
         )
     }

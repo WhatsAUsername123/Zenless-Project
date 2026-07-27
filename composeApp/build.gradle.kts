@@ -99,6 +99,7 @@ kotlin {
 }
 
 compose.resources {
+    packageOfResClass = "zzzarchive.composeapp.generated.resources"
     publicResClass = true
 }
 

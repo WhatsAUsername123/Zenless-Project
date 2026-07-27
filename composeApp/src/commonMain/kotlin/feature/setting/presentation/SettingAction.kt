@@ -15,7 +15,5 @@ sealed interface SettingAction {
 
     data object ClickFeedback : SettingAction
 
-    data object ClickHoYoLab : SettingAction
-
     data object RestartApp : SettingAction
 }

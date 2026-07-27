@@ -9,6 +9,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import feature.agent.data.database.AgentsListDB
 import feature.cover.data.database.CoverImagesListDB
+import feature.dailytracker.data.database.DailyTaskDB
 import feature.hoyolab.data.database.HoYoLabAccountDB
 import java.io.File
 
@@ -36,4 +37,7 @@ actual class RoomDatabaseFactory {
 
     actual fun createHoYoLabAccountDatabase(): RoomDatabase.Builder<HoYoLabAccountDB> =
         createDB(HoYoLabAccountDB.DATABASE_NAME)
+
+    actual fun createDailyTaskDatabase(): RoomDatabase.Builder<DailyTaskDB> =
+        createDB(DailyTaskDB.DATABASE_NAME)
 }

@@ -1,4 +1,4 @@
-rootProject.name = "ZZZarchive"
+rootProject.name = "Zeness-Project"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

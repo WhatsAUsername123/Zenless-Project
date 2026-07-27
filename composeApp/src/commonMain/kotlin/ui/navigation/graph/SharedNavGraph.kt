@@ -28,7 +28,6 @@ fun NavGraphBuilder.sharedNavGraph(navActions: NavActions) {
         composable<Screen.Setting> {
             SettingScreen(onFeedbackClick = {
                 navActions.navigationTo(Screen.Feedback)
-            }, onHoYoLabClick = {
                 navActions.navigationTo(Screen.HoYoLabSync)
             }, onDailyTrackerClick = {
                 navActions.navigationTo(Screen.DailyTracker)
@@ -57,7 +56,6 @@ fun NavGraphBuilder.sharedNavGraph(navActions: NavActions) {
     composable<Screen.Setting> {
         SettingScreen(onFeedbackClick = {
             navActions.navigationTo(Screen.Feedback)
-        }, onHoYoLabClick = {
             navActions.navigationTo(Screen.HoYoLabSync)
         }, onDailyTrackerClick = {
             navActions.navigationTo(Screen.DailyTracker)

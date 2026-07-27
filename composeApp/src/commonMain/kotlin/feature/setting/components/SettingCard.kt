@@ -49,14 +49,13 @@ fun SettingCard(
     onLanguageChange: (String) -> Unit,
     onColorChange: (Boolean) -> Unit,
     onScaleChange: (Float, Float) -> Unit,
-    onHoYoLabClick: () -> Unit,
     onRestart: () -> Unit
 ) {
     ContentCard(hasDefaultPadding = false) {
         LanguageSettingItem(language = uiState.language, onLanguageChange = onLanguageChange, onRestart = onRestart)
         ColorSettingItem(uiState.isDark, onColorChange)
         FontScaleItem(uiScaleValue = uiState.uiScale, fontScaleValue = uiState.fontScale, onScaleChange = onScaleChange)
-        HoYoLabSettingItem(onHoYoLabClick)
+
     }
 }
 
