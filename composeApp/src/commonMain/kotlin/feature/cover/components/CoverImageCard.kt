@@ -1,0 +1,135 @@
+/*
+ * Copyright 2024 The ZZZ Archive Open Source Project by mrfatworm
+ * License: MIT License
+ */
+
+package feature.cover.components
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsHoveredAsState
+import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.input.pointer.PointerIcon
+import androidx.compose.ui.input.pointer.pointerHoverIcon
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.unit.dp
+import com.github.panpf.sketch.SubcomposeAsyncImage
+import com.github.panpf.sketch.request.ComposableImageRequest
+import com.github.panpf.sketch.util.Size
+import feature.cover.data.database.CoverImageListItemEntity
+import kotlinx.coroutines.delay
+import ui.components.ImageNotFound
+import ui.theme.AppTheme
+import ui.utils.openUriSafe
+
+@Composable
+fun CoverImageCard(coverImages: List<CoverImageListItemEntity>) {
+    if (coverImages.isEmpty()) return
+
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed = interactionSource.collectIsPressedAsState()
+    val isHovered = interactionSource.collectIsHoveredAsState()
+    var displayedIndex by remember { mutableStateOf(coverImages.lastIndex) }
+
+    LaunchedEffect(Unit) {
+        while (true) {
+            delay(8_000L)
+            displayedIndex = if (displayedIndex - 1 < 0) coverImages.lastIndex else displayedIndex - 1
+        }
+    }
+
+    Box(
+        modifier = Modifier.aspectRatio(16 / 9f).fillMaxWidth().clip(AppTheme.shape.r400)
+    ) {
+        val urlHandler = LocalUriHandler.current
+        coverImages.forEachIndexed { index, image ->
+            AnimatedVisibility(
+                visible = index == displayedIndex,
+                enter = fadeIn(animationSpec = tween(durationMillis = 2000)),
+                exit = fadeOut(animationSpec = tween(durationMillis = 2000))
+            ) {
+                SubcomposeAsyncImage(
+                    modifier =
+                        Modifier
+                            .fillMaxSize()
+                            .pointerHoverIcon(PointerIcon.Hand)
+                            .clickable(
+                                interactionSource = interactionSource,
+                                indication = null
+                            ) {
+                                urlHandler.openUriSafe(image.artworkUrl)
+                            }.blur(if (isPressed.value || isHovered.value) 8.dp else 0.dp),
+                    request = ComposableImageRequest(image.imageUrl) {
+                        size(Size.Origin)
+                    },
+                    contentDescription = image.artworkName,
+                    contentScale = ContentScale.Crop,
+                    error = {
+                        ImageNotFound()
+                    }
+                )
+                AnimatedVisibility(
+                    visible = isPressed.value || isHovered.value,
+                    enter = fadeIn(),
+                    exit = fadeOut()
+                ) {
+                    ArtworkInfo(coverImage = image)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ArtworkInfo(
+    modifier: Modifier = Modifier,
+    coverImage: CoverImageListItemEntity
+) {
+    Column(
+        modifier
+            .fillMaxWidth()
+            .background(AppTheme.colors.hoveredMask)
+            .padding(AppTheme.spacing.s400),
+        verticalArrangement = Arrangement.spacedBy(AppTheme.spacing.s300)
+    ) {
+        Text(
+            modifier = Modifier,
+            text = coverImage.artworkName,
+            color = AppTheme.colors.onHoveredMask,
+            style = AppTheme.typography.titleMedium
+        )
+        Text(
+            modifier = Modifier.weight(1f),
+            text = coverImage.artworkDescription,
+            color = AppTheme.colors.onHoveredMask,
+            style = AppTheme.typography.bodyMedium
+        )
+        Text(
+            text = coverImage.authorName,
+            color = AppTheme.colors.onHoveredMaskVariant,
+            style = AppTheme.typography.labelMedium
+        )
+    }
+}

@@ -1,0 +1,50 @@
+/*
+ * Copyright 2024 The ZZZ Archive Open Source Project by mrfatworm
+ * License: MIT
+ */
+
+package feature.feedback.data
+
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNull
+import kotlinx.coroutines.test.runTest
+import network.FakeGoogleDocHttp
+
+class GoogleDocRepositoryTest {
+    private val client = FakeGoogleDocHttp()
+    private val repository = GoogleDocRepositoryImpl(client)
+
+    @Test
+    fun `Submit feedback form success`() = runTest {
+        val result =
+            repository
+                .submitFeedbackForm(
+                    issueType = "issueType",
+                    language = "language",
+                    issueDesc = "issueContent",
+                    email = "nickname",
+                    appVersion = "appVersion",
+                    deviceName = "deviceName",
+                    operatingSystem = "operatingSystem"
+                ).getOrNull()
+        assertEquals(Unit, result)
+    }
+
+    @Test
+    fun `Submit feedback form error`() = runTest {
+        client.setError(true)
+        val result =
+            repository
+                .submitFeedbackForm(
+                    issueType = "issueType",
+                    language = "language",
+                    issueDesc = "issueContent",
+                    email = "nickname",
+                    appVersion = "appVersion",
+                    deviceName = "deviceName",
+                    operatingSystem = "operatingSystem"
+                ).getOrNull()
+        assertNull(result)
+    }
+}

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="app_name">ZZZ Archive</string>
+    <string name="unknown">未知 ?</string>
+    <string name="unable_to_open_link">無法開啟連結: %s</string>
+
+    <!-- Common -->
+    <string name="navigation_drawer">導航列</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="confirm">確認</string>
+    <string name="cancel">取消</string>
+    <string name="close">關閉</string>
+    <string name="clear">清除</string>
+    <string name="delete">刪除</string>
+    <string name="retry">重試</string>
+    <string name="apply">套用</string>
+    <string name="back">返回</string>
+    <string name="previous">上一個</string>
+    <string name="next">下一個</string>
+    <string name="loading">載入中...</string>
+    <string name="view_detail">查看詳情</string>
+    <string name="view_all">查看全部</string>
+    <string name="announcement">公告</string>
+    <string name="filter">條件過濾</string>
+    <string name="default">預設</string>
+    <string name="default_value">預設值</string>
+    <string name="set_as_default">設為預設</string>
+    <string name="customize">自訂</string>
+    <string name="multiply">倍率</string>
+    <string name="bangboo_speak">嗯嗯呢嗯呢！</string>
+    <string name="unknown_error">未知的錯誤</string>
+    <string name="visible">顯示</string>
+    <string name="invisible">隱藏</string>
+    <string name="under_development">開發中功能</string>
+
+    <!-- Sub System -->
+    <string name="home">首頁</string>
+    <string name="agents">代理人</string>
+    <string name="all_agents">全部代理人</string>
+    <string name="w_engines">音擎</string>
+    <string name="all_w_engines">全部音擎</string>
+    <string name="drives">驅動光碟</string>
+    <string name="all_drives">全部驅動光碟</string>
+    <string name="bangboo">邦布</string>
+    <string name="all_bangboo">全部邦布</string>
+    <string name="setting">設定</string>
+    <string name="wiki">Wiki</string>
+    <string name="function">工具</string>
+
+    <!-- Attribute -->
+    <string name="ether">以太</string>
+    <string name="fire">火屬性</string>
+    <string name="ice">冰屬性</string>
+    <string name="electric">電屬性</string>
+    <string name="physical">物理</string>
+
+    <!-- Specialty -->
+    <string name="specialty">特性</string>
+    <string name="attack">強攻</string>
+    <string name="stun">擊破</string>
+    <string name="support">支援</string>
+    <string name="anomaly">異常</string>
+    <string name="defense">防護</string>
+    <string name="rupture">命破</string>
+
+    <!-- Attack Type -->
+    <string name="pierce">穿透</string>
+    <string name="slash">斬擊</string>
+    <string name="strike">打擊</string>
+
+    <!-- Faction -->
+    <string name="faction">陣營</string>
+    <string name="gentle_house">狡兔屋</string>
+    <string name="victoria_housekeeping">維多利亞居家服務</string>
+    <string name="belobog_heavy_industries">白祇重工</string>
+    <string name="obol_squad">奧波勒斯小隊</string>
+    <string name="section_6">對空六課</string>
+    <string name="criminal_investigation_special_response_team">刑偵特勤組</string>
+    <string name="sons_of_calydon">卡呂冬之子</string>
+    <string name="stars_of_lyra">天琴座</string>
+    <string name="silver_squad">白銀小隊</string>
+    <string name="mockingbird">反舌鳥</string>
+    <string name="yunkui_summit">雲巋山</string>
+    <string name="spook_shack">怪啖屋</string>
+    <string name="krampus_compliance_authority">坎卜斯黑枝</string>
+    <string name="angels_of_delusion">妄想天使</string>
+
+    <!-- Home -->
+    <string name="popular">熱門</string>
+    <string name="forum_popular">論壇熱門</string>
+    <string name="reddit">Reddit</string>
+    <string name="bahamut">巴哈</string>
+    <string name="ptt">Ptt</string>
+    <string name="nga">NGA</string>
+    <string name="replies">回覆</string>
+
+    <!-- Agent Detail -->
+    <string name="rarity">稀有度</string>
+    <string name="attributes">屬性</string>
+    <string name="hp">生命值</string>
+    <string name="atk">攻擊力</string>
+    <string name="def">防禦力</string>
+    <string name="hp_atk_def">生命 / 攻擊 / 防禦</string>
+    <string name="materials">素材</string>
+    <string name="skills">技能</string>
+    <string name="expand_all">全部展開</string>
+    <string name="basic_attack">普通攻擊</string>
+    <string name="dodge">閃避</string>
+    <string name="dash_attack">衝刺攻擊</string>
+    <string name="dodge_counter">閃避反擊</string>
+    <string name="quick_assist">快速支援</string>
+    <string name="defensive_assist">招架支援</string>
+    <string name="assist_follow_up">支援突擊</string>
+    <string name="special_attack">特殊技</string>
+    <string name="ex_special_attack">強化特殊技</string>
+    <string name="chain_attack">連攜技</string>
+    <string name="ultimate">終結技</string>
+    <string name="core_passive">核心被動</string>
+    <string name="additional_ability">額外能力</string>
+    <string name="mindscape_cinema">意象影畫</string>
+    <string name="suggest_w_engines">推薦音擎</string>
+    <string name="suggest_drives">推薦驅動光碟</string>
+    <string name="agent_background">代理人設定</string>
+    <string name="gallery">畫廊</string>
+
+    <!-- W-Engine Detail -->
+    <string name="w_engine_effect">音擎效果</string>
+    <string name="additional_info">更多訊息</string>
+
+    <!-- Bangboo Detail -->
+    <string name="active_skill">主動技</string>
+
+    <!-- Drive Detail -->
+    <string name="piece_set">%1$d 件套裝</string>
+    <string name="piece_set_short">%1$d件套</string>
+
+    <!-- Setting -->
+    <string name="language">語言</string>
+    <string name="color_theme">顏色主題</string>
+    <string name="light_theme">亮色主題</string>
+    <string name="dark_theme">暗色主題</string>
+    <string name="ui_scale">介面縮放</string>
+    <string name="font_scale">文字縮放</string>
+    <string name="ui_scale_warning">調整介面與文字大小\n\n注意：非預設大小可能導致介面跑版</string>
+    <string name="hoyolab_account">HoYoLab 帳號</string>
+    <string name="feedback">意見回饋</string>
+    <string name="privacy_policy">隱私政策</string>
+    <string name="open_source">開放原始碼</string>
+    <string name="coming_soon">即將開放</string>
+    <string name="resource_licence">App 中使用的遊戲圖片、動畫、音訊和文本原文，僅為更好地展示遊戲資料，大多來自 Zenless Zone Zero Wiki（Fandom），其版權歸 絕區零/米哈遊所有。除非另有聲明，其他內容均採用「姓名標示─相同方式分享 4.0 國際」（CC BY-SA 4.0）授權。</string>
+    <string name="code_licence">GitHub 上的開源程式碼採用 MIT 授權條款。</string>
+    <string name="contributors">貢獻者</string>
+    <string name="author">作者</string>
+    <string name="developer">開發者</string>
+    <string name="ui_ux_designers">UI / UX 設計師</string>
+    <string name="localization">多語系</string>
+    <string name="data_integration">資料整合</string>
+    <string name="banner_artists">封面畫師</string>
+    <string name="special_thanks">銘謝</string>
+    <string name="restart_hint">需要重新啟動應用程式以套用變更\n是否立即重新啟動？</string>
+    <string name="restart">重新啟動</string>
+    <string name="later">稍後</string>
+
+    <!-- Feedback -->
+    <string name="issue_type">問題類型</string>
+    <string name="please_select">請選擇</string>
+    <string name="crash_or_bug">閃退或 Bug</string>
+    <string name="incorrect_content">文本、內容錯誤</string>
+    <string name="suggestion">建議</string>
+    <string name="other">其他</string>
+    <string name="input_your_issue">輸入您遇到的問題</string>
+    <string name="your_email_optional">您的信箱（選填）</string>
+    <string name="app_version">應用程式版本</string>
+    <string name="device_name">裝置名稱</string>
+    <string name="operating_system">作業系統</string>
+    <string name="submit_form">提交表單</string>
+    <string name="invalid_feedback_form">問題類型未選擇或問題內容為空。</string>
+    <string name="form_submit_success">表單已送出\n感謝您的回饋！</string>
+
+    <!-- HoYoLab Sync -->
+    <string name="hoyolab_sync">同步 HoYoLab</string>
+    <string name="sync">同步</string>
+    <string name="unsync">取消同步</string>
+    <string name="game_server">遊戲伺服器</string>
+    <string name="account_not_found">查無帳號</string>
+    <string name="invalid_hoYoLab_form">遊戲伺服器未選擇或輸入內容為空</string>
+    <string name="update_at">%1$s 更新</string>
+    <string name="user_profile_image">使用者頭像</string>
+    <string name="hoyolab_sync_announcement">本頁面提交的資料僅用於 HoYoLab 的請求處理，並加密儲存在您的裝置中。我們不會蒐集任何資訊。</string>
+    <string name="remove_account_hint">是否取消帳號連結\n（從本裝置清除該帳號資料）</string>
+    <string name="add_account">新增帳號</string>
+
+    <!-- HoYoLab Sync Tutorial -->
+    <string name="instruction_guide">使用教學</string>
+    <string name="open_a_desktop_browser">打開電腦版瀏覽器</string>
+    <string name="navigate_to_zzz_battle_record">前往絕區零戰績</string>
+    <string name="hoyolab_zzz_game_record">HoYoLab > 絕區零 > 戰績</string>
+    <string name="open_developer_tools">開啟開發人員工具</string>
+    <string name="press_f12_to_open_developer_tools_cookies">按下 F12 開啟開發人員工具 > 應用程式 > Cookies</string>
+    <string name="copy_ltoken_ltuid_paste_them_into_the_form">複製 ltoken_v2 與 ltuid_v2 的值，並貼上至表單中</string>
+    <string name="frequently_asked_questions">常見問題</string>
+    <string name="unable_to_link">無法連結或連結失敗？</string>
+    <string name="please_try_again_using_incognito_mode">請使用瀏覽器無痕模式再試一次</string>
+    <string name="there_are_two_ltoken_values_which_one_should_i_choose">ltoken_v2 有兩個該怎麼選擇？</string>
+    <string name="either_one_works">都可以</string>
+    <string name="i_still_have_other_questions">我還有其他問題！！！</string>
+    <string name="provide_feedback_via_suggestions_or_report_your_issue_on_github">歡迎至 意見回饋 或 GitHub 回報您的問題</string>
+    <string name="image_example">圖片範例</string>
+
+    <!-- HoYoLab Card -->
+    <string name="engagement_today">今日活躍度</string>
+    <string name="scratch_card">刮刮樂</string>
+    <string name="video_store">錄音帶店</string>
+    <string name="bounty_commissions">懸賞委託</string>
+    <string name="investigate_point">調查點數</string>
+    <string name="incomplete">未完成</string>
+    <string name="open">營業中</string>
+    <string name="check_in">簽到</string>
+    <string name="check_in_success">簽到成功！</string>
+    <string name="ready_to_settle">可結算</string>
+    <string name="operating">營業中</string>
+    <string name="not_operating">未營業</string>
+    <string name="purchasable">可購買</string>
+    <string name="purchased">已購買</string>
+    <string name="ridu_weekly">麗都週記</string>
+
+    <!-- My Agent -->
+    <string name="my_agent">我的代理人</string>
+    <string name="w_engine_not_equipped">音擎未裝備</string>
+    <string name="effective_sub_stats">有效詞條</string>
+    <string name="hit">命中 %1$d</string>
+    <string name="display_uid">顯示 UID</string>
+    <string name="custom_image">自訂圖片</string>
+    <string name="image_url">圖片網址</string>
+    <string name="author_name_optional">作者名稱（選填）</string>
+    <string name="zoom_in">放大</string>
+    <string name="zoom_out">縮小</string>
+    <string name="background_blur">背景模糊</string>
+
+    <!-- Sponsorship -->
+    <string name="sponsorship_title">小額贊助</string>
+    <string name="sponsorship_description">親愛的使用者，謝謝你喜歡 ZZZ Archie！\n維持上架與更新需要平台費用，也花費我不少心力。\n若你覺得有幫助，歡迎點下方連結小額贊助，讓我繼續努力～ 感謝你的支持！</string>
+    <string name="buymeacoffee">Buy Me a Coffee</string>
+    <string name="ko_fi">Ko-fi</string>
+
+</resources>
