@@ -36,4 +36,5 @@ val useCaseModule = module {
     single<HoYoLabPreferenceUseCase> { HoYoLabPreferenceUseCase(get()) }
     single<GameRecordUseCase> { GameRecordUseCase(get(), get(), get(), get(), get()) }
     single<ForumUseCase> { ForumUseCase(get()) }
+    single { feature.redeemcode.domain.RedeemCodeUseCase(get()) }
 }

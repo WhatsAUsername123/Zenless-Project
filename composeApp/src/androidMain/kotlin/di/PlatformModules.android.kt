@@ -35,4 +35,5 @@ actual val platformModule =
         single<GoogleDocHttp> { GoogleDocHttpImpl(OkHttp.create()) }
         single<HoYoLabHttp> { HoYoLabHttpImpl(OkHttp.create()) }
         single<ForumHttp> { ForumHttpImpl(OkHttp.create()) }
+        single<network.RedeemCodeHttp> { network.RedeemCodeHttpImpl(OkHttp.create()) }
     }

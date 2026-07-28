@@ -20,6 +20,7 @@ import feature.forum.compoenents.TwitterCard
 import feature.hoyolab.components.HoYoLabCard
 import feature.news.components.NewsPagerCard
 import feature.pixiv.components.PixivCard
+import feature.redeemcode.components.RedeemCodeCard
 import ui.navigation.Screen
 import ui.theme.AppTheme
 import ui.utils.containerGap
@@ -68,6 +69,9 @@ fun HomeScreenDual(
                 verticalArrangement = Arrangement.spacedBy(contentGap())
             ) {
                 NewsPagerCard(uiState.newsList)
+                RedeemCodeCard(uiState.redeemCodes) {
+                    onAction(HomeAction.NavigateTo(Screen.RedeemCode))
+                }
                 AllForumCard(uiState.allForum)
             }
         }

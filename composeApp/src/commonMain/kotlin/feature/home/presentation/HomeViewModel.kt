@@ -28,6 +28,7 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val bannerUseCase: BannerUseCase,
+    private val redeemCodeUseCase: feature.redeemcode.domain.RedeemCodeUseCase,
     private val coverImageUseCase: CoverImageUseCase,
     private val pixivRepository: PixivRepository,
     private val newsUseCase: OfficialNewsUseCase,
@@ -35,6 +36,7 @@ class HomeViewModel(
     private val updateDatabaseUseCase: UpdateDatabaseUseCase,
     private val gameRecordUseCase: GameRecordUseCase
 ) : ViewModel() {
+    private var redeemCodeJob: Job? = null
     private var gameRecordJob: Job? = null
     private var officialNewsJob: Job? = null
     private var defaultAccountJob: Job? = null
@@ -54,6 +56,7 @@ class HomeViewModel(
                 observeDefaultAccount()
                 observeCoverImage()
                 observePixivTopic()
+                observeRedeemCodes()
             }.stateIn(
                 viewModelScope,
                 started = SharingStarted.WhileSubscribed(10000L),
@@ -106,6 +109,16 @@ class HomeViewModel(
     private fun updateCoverImages() {
         viewModelScope.launch {
             updateDatabaseUseCase.updateCoverImages()
+        }
+    }
+
+    private fun observeRedeemCodes() {
+        redeemCodeJob?.cancel()
+        redeemCodeJob = viewModelScope.launch {
+            redeemCodeUseCase.refresh()
+            redeemCodeUseCase.observeCodes().collect { codes ->
+                _uiState.update { it.copy(redeemCodes = codes) }
+            }
         }
     }
 

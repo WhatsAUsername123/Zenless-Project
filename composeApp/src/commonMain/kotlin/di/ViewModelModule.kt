@@ -12,6 +12,7 @@ import org.koin.dsl.module
 import root.InitViewModel
 import root.MainContainerViewModel
 import feature.dailytracker.presentation.DailyTrackerViewModel
+import feature.redeemcode.presentation.RedeemCodeViewModel
 
 val viewModelModule = module {
     viewModelOf(::InitViewModel)
@@ -24,4 +25,5 @@ val viewModelModule = module {
     viewModelOf(::MyAgentsListViewModel)
     viewModelOf(::MyAgentDetailViewModel)
     viewModelOf(::DailyTrackerViewModel)
+    viewModelOf(::RedeemCodeViewModel)
 }

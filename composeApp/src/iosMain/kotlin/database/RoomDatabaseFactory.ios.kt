@@ -10,6 +10,7 @@ import feature.agent.data.database.AgentsListDB
 import feature.cover.data.database.CoverImagesListDB
 import feature.dailytracker.data.database.DailyTaskDB
 import feature.hoyolab.data.database.HoYoLabAccountDB
+import feature.redeemcode.data.database.RedeemedCodeDB
 import kotlinx.cinterop.ExperimentalForeignApi
 import platform.Foundation.NSDocumentDirectory
 import platform.Foundation.NSFileManager
@@ -27,6 +28,13 @@ actual class RoomDatabaseFactory {
                 error = null
             )
         return requireNotNull(documentDirectory?.path)
+    }
+
+    actual fun createRedeemCodeDatabase(): RoomDatabase.Builder<RedeemedCodeDB> {
+        val dbFile = documentDirectory() + "/${RedeemedCodeDB.DATABASE_NAME}"
+        return Room.databaseBuilder<RedeemedCodeDB>(
+            name = dbFile
+        )
     }
 
     actual fun createAgentListDatabase(): RoomDatabase.Builder<AgentsListDB> {

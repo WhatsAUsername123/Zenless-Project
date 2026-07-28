@@ -12,6 +12,7 @@ import feature.agent.data.database.AgentsListDB
 import feature.cover.data.database.CoverImagesListDB
 import feature.hoyolab.data.database.HoYoLabAccountDB
 import feature.dailytracker.data.database.DailyTaskDB
+import feature.redeemcode.data.database.RedeemedCodeDB
 
 actual class RoomDatabaseFactory(private val context: Context) {
     private fun <T : RoomDatabase> createDB(
@@ -27,6 +28,9 @@ actual class RoomDatabaseFactory(private val context: Context) {
             name = dbFile.absolutePath
         )
     }
+
+    actual fun createRedeemCodeDatabase(): RoomDatabase.Builder<RedeemedCodeDB> =
+        createDB(RedeemedCodeDB::class.java, RedeemedCodeDB.DATABASE_NAME)
 
     actual fun createAgentListDatabase(): RoomDatabase.Builder<AgentsListDB> =
         createDB(AgentsListDB::class.java, AgentsListDB.DATABASE_NAME)

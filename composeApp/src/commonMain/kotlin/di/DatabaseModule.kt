@@ -39,4 +39,6 @@ val databaseModule = module {
     single { get<CoverImagesListDB>().coverImagesListDao }
     single { get<HoYoLabAccountDB>().hoYoLabAccountDao }
     single { get<DailyTaskDB>().dailyTaskDao }
+    single { get<database.RoomDatabaseFactory>().createRedeemCodeDatabase().build() }
+    single { get<feature.redeemcode.data.database.RedeemedCodeDB>().redeemedCodeDao }
 }

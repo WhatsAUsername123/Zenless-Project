@@ -18,6 +18,15 @@ import io.ktor.http.takeFrom
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
+fun createRedeemCodeHttpClient(engine: HttpClientEngine): HttpClient = HttpClient(engine) {
+    install(ContentNegotiation) {
+        json(Json { ignoreUnknownKeys = true })
+    }
+    install(HttpTimeout) {
+        requestTimeoutMillis = 10000L
+    }
+}
+
 fun createZzzHttpClient(engine: HttpClientEngine): HttpClient = HttpClient(engine) {
     install(ContentNegotiation) {
         json(

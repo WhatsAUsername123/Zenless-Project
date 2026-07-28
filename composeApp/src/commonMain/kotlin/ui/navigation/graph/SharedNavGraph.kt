@@ -19,6 +19,7 @@ import ui.navigation.NavActions
 import ui.navigation.Screen
 import ui.navigation.slideInAnimateComposable
 import feature.dailytracker.presentation.DailyTrackerScreen
+import feature.redeemcode.presentation.RedeemCodeScreen
 
 fun NavGraphBuilder.sharedNavGraph(navActions: NavActions) {
     slideInAnimateComposable<Screen.DailyTracker> {
@@ -40,6 +41,10 @@ fun NavGraphBuilder.sharedNavGraph(navActions: NavActions) {
         }, onBackClick = {
             navActions.back()
         })
+    }
+
+    composable<Screen.RedeemCode> {
+        RedeemCodeScreen(onBackClick = { navActions.back() })
     }
 
     composable<Screen.AgentGallery> {

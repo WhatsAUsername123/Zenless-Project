@@ -18,6 +18,7 @@ import feature.forum.compoenents.TwitterCard
 import feature.hoyolab.components.HoYoLabCard
 import feature.news.components.NewsPagerCard
 import feature.pixiv.components.PixivCard
+import feature.redeemcode.components.RedeemCodeCard
 import ui.navigation.Screen
 import ui.utils.contentGap
 import ui.utils.horizontalSafePadding
@@ -44,6 +45,11 @@ fun HomeScreenSingle(
         }
         item {
             NewsPagerCard(uiState.newsList)
+        }
+        item {
+            RedeemCodeCard(uiState.redeemCodes) {
+                onAction(HomeAction.NavigateTo(Screen.RedeemCode))
+            }
         }
         item {
             HoYoLabCard(uiState.gameRecord, uiState.signResult, onSignClick = {

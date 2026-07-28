@@ -11,6 +11,9 @@ import kotlinx.serialization.Serializable
 sealed interface Screen {
 
     @Serializable
+    data object RedeemCode : Screen
+
+    @Serializable
     data object DailyTracker : Screen
     @Serializable
     data object Home : Screen

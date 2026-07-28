@@ -102,7 +102,7 @@ private fun PrivacyPolicyItem() {
             )
         }
     }, onClick = {
-        urlHandler.openUriSafe("https://hackmd.io/p3BDitRVTF2GQpawLRylRA")
+        urlHandler.openUriSafe("https://youtu.be/mC9KYvOPmxA?si=lWLqwZUavuOwjQiB")
     })
 }
 

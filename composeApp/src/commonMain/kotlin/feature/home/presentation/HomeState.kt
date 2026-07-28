@@ -18,7 +18,7 @@ import feature.hoyolab.model.VhsSaleState
 import feature.hoyolab.model.WeeklyTaskState
 import feature.news.model.OfficialNewsListItem
 import feature.pixiv.model.PixivArticleItem
-
+import feature.redeemcode.model.RedeemCode
 data class HomeState(
     val banner: BannerResponse? = null,
     val coverImage: List<CoverImageListItemEntity> = emptyList(),
@@ -26,7 +26,8 @@ data class HomeState(
     val pixivTopics: List<PixivArticleItem> = emptyList(),
     val gameRecord: GameRecordState = emptyGameRecordState,
     val signResult: String? = null,
-    val allForum: AllForumState = emptyAllForumState
+    val allForum: AllForumState = emptyAllForumState,
+    val redeemCodes: List<RedeemCode> = emptyList()
 )
 
 val emptyGameRecordState =

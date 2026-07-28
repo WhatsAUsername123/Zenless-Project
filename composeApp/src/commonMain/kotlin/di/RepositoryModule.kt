@@ -43,4 +43,7 @@ val repositoryModule = module {
     single<HoYoLabAgentRepository> { HoYoLabAgentRepositoryImpl(get()) }
     single<ForumRepository> { ForumRepositoryImpl(get()) }
     single<ZzzCrypto> { ZzzCryptoImpl() }
+    single<feature.redeemcode.data.repository.RedeemCodeRepository> {
+        feature.redeemcode.data.repository.RedeemCodeRepositoryImpl(get(), get())
+    }
 }
