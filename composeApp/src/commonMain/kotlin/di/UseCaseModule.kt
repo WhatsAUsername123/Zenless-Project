@@ -17,6 +17,7 @@ import feature.setting.domain.ThemeUseCase
 import feature.setting.domain.UiScaleUseCase
 import org.koin.dsl.module
 import feature.dailytracker.domain.DailyTaskUseCase
+import feature.materialcalculator.domain.MaterialCalculatorUseCase
 
 val useCaseModule = module {
     single<DailyTaskUseCase> { DailyTaskUseCase(get()) }
@@ -37,4 +38,5 @@ val useCaseModule = module {
     single<GameRecordUseCase> { GameRecordUseCase(get(), get(), get(), get(), get()) }
     single<ForumUseCase> { ForumUseCase(get()) }
     single { feature.redeemcode.domain.RedeemCodeUseCase(get()) }
+    single { MaterialCalculatorUseCase() }
 }
