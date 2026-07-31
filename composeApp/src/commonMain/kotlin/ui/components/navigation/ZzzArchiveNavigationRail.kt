@@ -99,10 +99,7 @@ fun ZzzArchiveNavigationRail(
                         navActions.navigationToMainScreen(mainFlow.route)
                     },
                     icon = {
-                        Icon(
-                            imageVector = vectorResource(mainFlow.iconRes),
-                            contentDescription = stringResource(mainFlow.textRes)
-                        )
+                        TopDestinationIcon(destination = mainFlow)
                     },
                     colors = navigationRailItemColors()
                 )

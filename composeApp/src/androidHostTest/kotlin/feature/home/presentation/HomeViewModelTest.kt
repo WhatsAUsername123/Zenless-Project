@@ -20,19 +20,20 @@ import feature.hoyolab.model.stubSignResponse
 import feature.news.domain.OfficialNewsUseCase
 import feature.news.model.stubOfficialNewsListItem
 import feature.pixiv.data.FakePixivRepository
+import feature.redeemcode.domain.RedeemCodeUseCase
 import feature.pixiv.data.mapper.toPixivArticleList
 import feature.pixiv.model.stubPixivTopicResponse
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
-import kotlin.test.BeforeTest
-import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
+import kotlin.test.BeforeTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class HomeViewModelTest {
     @get:Rule
@@ -45,6 +46,7 @@ class HomeViewModelTest {
     private val updateDatabaseUseCase = mockk<UpdateDatabaseUseCase>()
     private val gameRecordUseCase = mockk<GameRecordUseCase>()
     private val forumUseCase = mockk<ForumUseCase>()
+    private val redeemCodeUseCase = mockk<RedeemCodeUseCase>()
     private lateinit var viewModel: HomeViewModel
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -71,6 +73,7 @@ class HomeViewModelTest {
             flowOf(
                 stubAllForumState
             )
+        coEvery { redeemCodeUseCase.observeCodes() } returns flowOf(emptyList())
         viewModel =
             HomeViewModel(
                 bannerUseCase = bannerUseCase,
@@ -79,7 +82,8 @@ class HomeViewModelTest {
                 newsUseCase = officialNewsUseCase,
                 forumUseCase = forumUseCase,
                 updateDatabaseUseCase = updateDatabaseUseCase,
-                gameRecordUseCase = gameRecordUseCase
+                gameRecordUseCase = gameRecordUseCase,
+                redeemCodeUseCase = redeemCodeUseCase
             )
     }
 

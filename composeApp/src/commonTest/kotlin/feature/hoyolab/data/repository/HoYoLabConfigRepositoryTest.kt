@@ -9,13 +9,13 @@ import feature.hoyolab.data.database.FakeHoYoLabAccountDao
 import feature.hoyolab.data.database.stubHoYoLabAccountEntity
 import feature.hoyolab.model.stubPlayerBasicInfo
 import feature.hoyolab.model.stubPlayerDetailResponse
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.test.runTest
 import network.FakeHoYoLabHttp
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNull
 
 class HoYoLabConfigRepositoryTest {
     private val dao = FakeHoYoLabAccountDao()

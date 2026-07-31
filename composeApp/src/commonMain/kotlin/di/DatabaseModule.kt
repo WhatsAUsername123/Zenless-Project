@@ -4,9 +4,9 @@ import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import database.RoomDatabaseFactory
 import feature.agent.data.database.AgentsListDB
 import feature.cover.data.database.CoverImagesListDB
+import feature.dailytracker.data.database.DailyTaskDB
 import feature.hoyolab.data.database.HoYoLabAccountDB
 import org.koin.dsl.module
-import feature.dailytracker.data.database.DailyTaskDB
 
 val databaseModule = module {
     single {

@@ -101,10 +101,7 @@ fun ModalNavigationDrawerContent(
                         style = if (isSelected) AppTheme.typography.labelLarge else AppTheme.typography.labelMedium
                     )
                 }, icon = {
-                    Icon(
-                        imageVector = vectorResource(mainFlow.iconRes),
-                        contentDescription = stringResource(mainFlow.textRes)
-                    )
+                    TopDestinationIcon(destination = mainFlow)
                 }, colors = navigationDrawerItemColors(), onClick = {
                     navigationActions.navigationToMainScreen(mainFlow.route)
                     onDrawerClicked()

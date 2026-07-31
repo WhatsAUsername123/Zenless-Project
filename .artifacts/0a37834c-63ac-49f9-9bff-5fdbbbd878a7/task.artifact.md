@@ -1,0 +1,17 @@
+- [x] Update dependencies in `libs.versions.toml`
+- [x] Lower `compileSdk` to 36 in `androidApp/build.gradle.kts` (Reverted to 37 after upgrade)
+- [x] Lower `compileSdk` to 36 in `composeApp/build.gradle.kts` (Reverted to 37 after upgrade)
+- [x] Add dexing parallelism limit to `gradle.properties`
+- [x] Perform Gradle sync
+- [x] Verify build via `./gradlew :androidApp:mergeExtDexDevDebug`
+- [x] Verify full build via `./gradlew clean :androidApp:assembleDevDebug`
+- [x] Create `rememberGifImageLoader` expect declaration in `commonMain`
+- [x] Implement `actual` `rememberGifImageLoader` for Android
+- [x] Implement `actual` `rememberGifImageLoader` for iOS
+- [x] Implement `actual` `rememberGifImageLoader` for Desktop
+- [x] Restore and update `RandomGifFiller` in `SettingScreen.kt`
+- [x] Move `RandomGifFiller` to shared components and add to `OtherInfoCard`
+    - [x] Create `ui/components/RandomGifFiller.kt`
+    - [x] Update `SettingScreen.kt`
+    - [x] Update `OtherInfoCard.kt`
+- [x] Verify build

@@ -13,11 +13,11 @@ import feature.hoyolab.model.stubGameRecordResponse
 import feature.hoyolab.model.stubSignResponse
 import feature.setting.data.FakePreferenceRepository
 import feature.setting.domain.FakeLanguageUseCase
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
 
 class GameRecordUseCaseTest {
     private val hoYoLabRepository = FakeHoYoLabConfigRepository()

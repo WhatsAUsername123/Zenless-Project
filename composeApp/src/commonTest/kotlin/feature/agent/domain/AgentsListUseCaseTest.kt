@@ -9,14 +9,14 @@ import feature.agent.data.repository.FakeAgentRepository
 import feature.agent.model.Faction
 import feature.agent.model.stubAgentsList
 import feature.setting.domain.FakeLanguageUseCase
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import utils.AgentAttribute
 import utils.AgentSpecialty
 import utils.ZzzRarity
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNull
 
 class AgentsListUseCaseTest {
     private val agentRepository = FakeAgentRepository()

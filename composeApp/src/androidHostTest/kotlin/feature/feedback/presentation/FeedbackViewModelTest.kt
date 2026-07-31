@@ -13,13 +13,13 @@ import feature.setting.domain.LanguageUseCase
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
+import kotlinx.coroutines.flow.flowOf
+import org.junit.Rule
+import utils.Language
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
-import kotlinx.coroutines.flow.flowOf
-import org.junit.Rule
-import utils.Language
 
 class FeedbackViewModelTest {
     @get:Rule

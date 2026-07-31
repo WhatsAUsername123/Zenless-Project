@@ -2,11 +2,11 @@ package feature.forum.domain
 
 import feature.forum.data.FakeForumRepository
 import feature.forum.model.stubAllForumState
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.test.runTest
 
 class ForumUseCaseTest {
     private val repository = FakeForumRepository()

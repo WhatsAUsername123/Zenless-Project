@@ -18,7 +18,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import kotlin.math.round
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import ui.components.ZzzSlider
@@ -34,6 +33,7 @@ import zzzarchive.composeapp.generated.resources.img_summer_solstice_2023_artwor
 import zzzarchive.composeapp.generated.resources.multiply
 import zzzarchive.composeapp.generated.resources.ui_scale
 import zzzarchive.composeapp.generated.resources.ui_scale_warning
+import kotlin.math.round
 
 @Composable
 fun ScaleFontSizeDialog(

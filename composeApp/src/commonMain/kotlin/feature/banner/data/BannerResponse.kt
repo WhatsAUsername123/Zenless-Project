@@ -34,16 +34,3 @@ enum class BannerLevel {
     Warning,
     Alert
 }
-
-@Suppress("ktlint:standard:max-line-length")
-val stubBannerResponse =
-    BannerResponse(
-        id = 2,
-        title = "The app is still under development. If you encounter any issues, please feel free to report them to us.",
-        url = "https://github.com/mrfatworm/ZZZ-Archive",
-        urlDesc = "View on GitHub",
-        route = "feedback",
-        routeDesc = "Setting > Feedback",
-        level = "warning",
-        ignorable = true
-    )

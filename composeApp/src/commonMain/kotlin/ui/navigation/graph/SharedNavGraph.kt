@@ -10,16 +10,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import feature.agent.presentation.AgentGalleryScreen
 import feature.agent.presentation.AgentsListScreen
-import feature.feedback.presentation.FeedbackScreen
+import feature.dailytracker.presentation.DailyTrackerScreen
 import feature.hoyolab.presentation.HoYoLabSyncScreen
 import feature.hoyolab.presentation.MyAgentDetailScreen
 import feature.hoyolab.presentation.MyAgentsListScreen
+import feature.redeemcode.presentation.RedeemCodeScreen
 import feature.setting.presentation.SettingScreen
 import ui.navigation.NavActions
 import ui.navigation.Screen
 import ui.navigation.slideInAnimateComposable
-import feature.dailytracker.presentation.DailyTrackerScreen
-import feature.redeemcode.presentation.RedeemCodeScreen
 
 fun NavGraphBuilder.sharedNavGraph(navActions: NavActions) {
     slideInAnimateComposable<Screen.DailyTracker> {
@@ -65,12 +64,6 @@ fun NavGraphBuilder.sharedNavGraph(navActions: NavActions) {
         }, onDailyTrackerClick = {
             navActions.navigationTo(Screen.DailyTracker)
         })
-    }
-
-    slideInAnimateComposable<Screen.Feedback> {
-        FeedbackScreen {
-            navActions.back()
-        }
     }
 
     slideInAnimateComposable<Screen.HoYoLabSync> {

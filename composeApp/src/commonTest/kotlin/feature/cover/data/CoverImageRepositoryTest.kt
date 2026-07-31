@@ -7,11 +7,11 @@ package feature.cover.data
 
 import feature.cover.data.database.FakeCoverImagesListDao
 import feature.cover.data.repository.CoverImageRepositoryImpl
-import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import network.FakeZzzHttp
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class CoverImageRepositoryTest {
     private val httpClient = FakeZzzHttp()

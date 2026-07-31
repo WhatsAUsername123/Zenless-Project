@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidMultiplatformLibrary)
@@ -41,6 +39,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation("io.coil-kt.coil3:coil-compose:3.0.4")
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
@@ -54,6 +53,8 @@ kotlin {
             implementation(libs.sketch.compose)
             implementation(libs.sketch.http.ktor3)
             implementation(libs.sketch.animated.webp)
+            implementation(libs.sketch.animated.gif)
+            implementation(libs.sketch.compose.resources)
             api(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.androidx.lifecycle.viewmodel)
@@ -77,11 +78,13 @@ kotlin {
         }
 
         androidMain.dependencies {
+            implementation("io.coil-kt.coil3:coil-gif:3.0.4")
             implementation(libs.ktor.client.okhttp)
             implementation(libs.compose.uiToolingPreview)
         }
 
         iosMain.dependencies {
+            implementation("io.coil-kt.coil3:coil-gif:3.0.4")
             implementation(libs.ktor.client.darwin)
             implementation(libs.cryptography.provider.apple)
         }

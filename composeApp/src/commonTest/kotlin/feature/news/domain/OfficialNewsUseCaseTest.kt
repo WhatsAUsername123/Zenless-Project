@@ -9,12 +9,12 @@ import feature.news.data.FakeOfficialNewsRepository
 import feature.news.data.mapper.toOfficialNewsList
 import feature.news.model.stubOfficialNewsDataResponseResponse
 import feature.setting.domain.FakeLanguageUseCase
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import utils.Language
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNull
 
 class OfficialNewsUseCaseTest {
     private val newsRepository = FakeOfficialNewsRepository()

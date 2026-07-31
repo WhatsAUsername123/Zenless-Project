@@ -22,7 +22,6 @@ import ui.utils.cardPadding
 import ui.utils.conditional
 import utils.AgentSpecialty
 import zzzarchive.composeapp.generated.resources.Res
-import zzzarchive.composeapp.generated.resources.attributes
 import zzzarchive.composeapp.generated.resources.specialty
 
 @OptIn(ExperimentalLayoutApi::class)

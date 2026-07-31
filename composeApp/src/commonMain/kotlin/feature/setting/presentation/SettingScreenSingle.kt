@@ -8,18 +8,20 @@ package feature.setting.presentation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import feature.setting.components.LicenseCard
 import feature.setting.components.OtherInfoCard
 import feature.setting.components.SettingCard
 import feature.setting.model.SettingState
+import ui.components.RandomGifFiller
 import ui.utils.contentGap
-import ui.utils.horizontalSafePadding
 import ui.utils.verticalSafePadding
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.Alignment
 
 @Composable
 fun SettingScreenSingle(
@@ -31,7 +33,6 @@ fun SettingScreenSingle(
             Modifier
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
-                .padding(horizontalSafePadding())
                 .padding(verticalSafePadding()),
         verticalArrangement = Arrangement.spacedBy(contentGap())
     ) {
@@ -45,11 +46,11 @@ fun SettingScreenSingle(
             },
             onScaleChange = { uiScale, fontScale ->
                 onAction(SettingAction.ScaleUi(uiScale, fontScale))
-            },
-            onRestart = {
-                onAction(SettingAction.RestartApp)
             }
-        )
+        ) {
+            onAction(SettingAction.RestartApp)
+        }
+
         OtherInfoCard(
             onFeedbackClick = {
                 onAction(SettingAction.ClickFeedback)
@@ -59,6 +60,12 @@ fun SettingScreenSingle(
             }
         )
 
-        LicenseCard(uiState.appVersion)
-    }
+        androidx.compose.foundation.layout.Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 40.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                RandomGifFiller()
+            }    }
 }

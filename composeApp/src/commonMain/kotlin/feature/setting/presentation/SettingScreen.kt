@@ -15,6 +15,7 @@ import org.koin.compose.viewmodel.koinViewModel
 import ui.theme.AppTheme
 import ui.utils.ContentType
 
+
 @Composable
 fun SettingScreen(
     onFeedbackClick: () -> Unit,

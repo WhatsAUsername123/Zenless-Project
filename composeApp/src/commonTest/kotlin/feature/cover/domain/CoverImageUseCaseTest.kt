@@ -6,11 +6,11 @@
 package feature.cover.domain
 
 import feature.cover.data.FakeCoverImageRepository
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
 
 class CoverImageUseCaseTest {
     private val coverImageRepository = FakeCoverImageRepository()

@@ -7,8 +7,8 @@ import feature.redeemcode.model.RemoteRedeemCode
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
-import kotlin.time.Clock
 import network.RedeemCodeHttp
+import kotlin.time.Clock
 
 class RedeemCodeRepositoryImpl(
     private val http: RedeemCodeHttp,

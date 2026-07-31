@@ -9,13 +9,16 @@ import feature.setting.data.PreferencesRepository
 import feature.setting.domain.LanguageUseCase
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
+import utils.AppFileStorage
+import utils.resolveAgentImageUri
 
 class HoYoLabAgentUseCase(
     private val repository: HoYoLabAgentRepository,
     private val accountDao: HoYoLabAccountDao,
     private val preferencesRepository: PreferencesRepository,
     private val zzzCrypto: ZzzCrypto,
-    private val languageUseCase: LanguageUseCase
+    private val languageUseCase: LanguageUseCase,
+    private val fileStorage: AppFileStorage
 ) {
     suspend fun getAgentsList(): Result<List<MyAgentListItem>> {
         val defaultAccountUid = preferencesRepository.getDefaultHoYoLabAccountUid().first()
@@ -32,8 +35,13 @@ class HoYoLabAgentUseCase(
             lToken = lToken,
             ltUid = ltUid
         )
-        result.fold(onSuccess = {
-            return Result.success(it)
+        result.fold(onSuccess = { list ->
+            val resolved = list.map { item ->
+                item.copy(
+                    imageUrl = resolveAgentImageUri(item.name, item.imageUrl, fileStorage)
+                )
+            }
+            return Result.success(resolved)
         }, onFailure = {
             return Result.failure(it)
         })

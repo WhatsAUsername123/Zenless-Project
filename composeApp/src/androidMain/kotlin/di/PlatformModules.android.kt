@@ -5,6 +5,7 @@
 
 package di
 
+import android.content.Context
 import database.RoomDatabaseFactory
 import datastore.DataStoreFactory
 import io.ktor.client.engine.okhttp.OkHttp
@@ -23,12 +24,15 @@ import network.ZzzHttpImpl
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import utils.AppActionsUseCase
+import utils.AppFileStorage
+import utils.AndroidAppFileStorage
 
 actual val platformModule =
     module {
         singleOf(::AppActionsUseCase)
         singleOf(::RoomDatabaseFactory)
         singleOf(::DataStoreFactory)
+        single<AppFileStorage> { AndroidAppFileStorage(get<Context>()) }
         single<ZzzHttp> { ZzzHttpImpl(OkHttp.create()) }
         single<OfficialWebHttp> { OfficialWebHttpImpl(OkHttp.create()) }
         single<PixivHttp> { PixivHttpImpl(OkHttp.create()) }

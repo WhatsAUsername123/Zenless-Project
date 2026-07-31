@@ -34,7 +34,7 @@ sealed class MainFlow(val startScreen: Screen) {
 
     @Serializable
     data object Agent : MainFlow(
-        startScreen = Screen.AgentsList
+        startScreen = Screen.MyAgentsList
     )
 
     @Serializable
@@ -46,7 +46,10 @@ sealed class MainFlow(val startScreen: Screen) {
 data class TopDestination(
     val route: MainFlow,
     val iconRes: DrawableResource = Res.drawable.ic_help,
-    val textRes: StringResource = Res.string.unknown
+    val textRes: StringResource = Res.string.unknown,
+    // Relative path under commonMain/composeResources, e.g. "files/ic_agents_animated.gif".
+    // When set, this takes priority over iconRes and is rendered as an animated image.
+    val animatedIconPath: String? = null
 )
 
 private val topHomeDestination = TopDestination(

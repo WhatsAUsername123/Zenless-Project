@@ -9,10 +9,10 @@ import feature.banner.data.FakeBannerRepository
 import feature.banner.data.stubBannerResponse
 import feature.setting.data.FakeSystemConfigRepository
 import feature.setting.domain.FakeLanguageUseCase
+import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
-import kotlinx.coroutines.test.runTest
 
 class BannerUseCaseTest {
     private val bannerRepository = FakeBannerRepository()

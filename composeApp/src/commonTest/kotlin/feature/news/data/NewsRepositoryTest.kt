@@ -6,11 +6,11 @@
 package feature.news.data
 
 import feature.news.model.stubOfficialNewsDataResponseResponse
+import kotlinx.coroutines.test.runTest
+import network.FakeOfficialWebHttp
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
-import kotlinx.coroutines.test.runTest
-import network.FakeOfficialWebHttp
 
 class NewsRepositoryTest {
     private val httpClient = FakeOfficialWebHttp()

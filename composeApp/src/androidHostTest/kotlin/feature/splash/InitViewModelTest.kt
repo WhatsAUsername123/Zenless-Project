@@ -12,14 +12,14 @@ import feature.setting.domain.ThemeUseCase
 import feature.setting.domain.UiScaleUseCase
 import io.mockk.every
 import io.mockk.mockk
-import kotlin.test.BeforeTest
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Rule
 import root.InitViewModel
 import utils.Language
+import kotlin.test.BeforeTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class InitViewModelTest {
     @get:Rule

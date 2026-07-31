@@ -6,11 +6,11 @@
 package feature.agent.data.repository
 
 import feature.agent.data.database.FakeAgentListDao
-import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import network.FakeZzzHttp
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class AgentRepositoryImplTest {
     private val httpClient = FakeZzzHttp()

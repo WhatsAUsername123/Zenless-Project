@@ -5,11 +5,11 @@
 
 package feature.banner.data
 
+import kotlinx.coroutines.test.runTest
+import network.FakeZzzHttp
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
-import kotlinx.coroutines.test.runTest
-import network.FakeZzzHttp
 
 class BannerRepositoryTest {
     private val httpClient = FakeZzzHttp()

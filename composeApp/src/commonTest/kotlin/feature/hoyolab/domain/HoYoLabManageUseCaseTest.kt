@@ -9,12 +9,12 @@ import feature.hoyolab.data.crypto.FakeZzzCrypto
 import feature.hoyolab.data.database.stubHoYoLabAccountEntity
 import feature.hoyolab.data.repository.FakeHoYoLabConfigRepository
 import feature.setting.data.FakePreferenceRepository
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import kotlinx.datetime.TimeZone
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNull
 
 class HoYoLabManageUseCaseTest {
     private val hoYoLabRepository = FakeHoYoLabConfigRepository()

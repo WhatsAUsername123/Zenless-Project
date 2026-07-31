@@ -13,10 +13,11 @@ import feature.hoyolab.model.agent.stubMyAgentDetail
 import feature.hoyolab.model.stubMyAgentsList
 import feature.setting.data.FakePreferenceRepository
 import feature.setting.domain.FakeLanguageUseCase
+import kotlinx.coroutines.test.runTest
+import utils.AppFileStorage
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlinx.coroutines.test.runTest
 
 class HoYoLabAgentUseCaseTest {
     private val repository = FakeHoYoLabAgentRepository()
@@ -24,13 +25,17 @@ class HoYoLabAgentUseCaseTest {
     private val preferencesRepository = FakePreferenceRepository()
     private val zzzCrypto = FakeZzzCrypto()
     private val languageUseCase = FakeLanguageUseCase()
+    private val fileStorage = object : AppFileStorage {
+        override fun cacheDirPath(): String = ""
+    }
     private val useCase =
         HoYoLabAgentUseCase(
             repository = repository,
             accountDao = accountDao,
             preferencesRepository = preferencesRepository,
             zzzCrypto = zzzCrypto,
-            languageUseCase = languageUseCase
+            languageUseCase = languageUseCase,
+            fileStorage = fileStorage
         )
 
     @BeforeTest

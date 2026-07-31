@@ -5,25 +5,21 @@
 
 package ui.components.chips
 
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import org.jetbrains.compose.resources.stringResource
 import ui.theme.AppTheme
 import ui.utils.cardPadding
-import ui.utils.conditional
 import utils.AgentAttribute
 import zzzarchive.composeapp.generated.resources.Res
 import zzzarchive.composeapp.generated.resources.attributes
-import zzzarchive.composeapp.generated.resources.rarity
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

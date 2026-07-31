@@ -105,7 +105,11 @@ fun MyAgentImageCard(
                         ).transformable(state = state, enabled = uiState.adjustMode),
                 request =
                     ComposableImageRequest(
-                        if (uiState.isCustomImage) uiState.customImgUrl else agentDetail.imageUrl
+                        if (uiState.isCustomImage) {
+                            uiState.customImgUrl
+                        } else {
+                            agentDetail.imageUrl
+                        }
                     ) {
                         downloadCachePolicy(CachePolicy.DISABLED)
                         resultCachePolicy(CachePolicy.DISABLED)

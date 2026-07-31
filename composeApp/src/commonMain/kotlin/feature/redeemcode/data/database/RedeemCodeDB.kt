@@ -1,9 +1,8 @@
 package feature.redeemcode.data.database
 
+import androidx.room.ConstructedBy
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import androidx.room.ConstructedBy
-import feature.redeemcode.data.database.RedeemedCodeDB
 
 @Database(entities = [RedeemedCodeEntity::class], version = 1)
 @ConstructedBy(RedeemedCodeDBConstructor::class)

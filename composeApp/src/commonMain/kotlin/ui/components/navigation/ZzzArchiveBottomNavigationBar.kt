@@ -6,7 +6,6 @@
 package ui.components.navigation
 
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -17,7 +16,6 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.resources.vectorResource
 import ui.navigation.NAV_BOTTOM_MAIN_FLOW
 import ui.navigation.NavActions
 import ui.theme.AppTheme
@@ -41,10 +39,7 @@ fun ZzzArchiveBottomNavigationBar(
                     navigationActions.navigationToMainScreen(mainFlow.route)
                 },
                 icon = {
-                    Icon(
-                        imageVector = vectorResource(mainFlow.iconRes),
-                        contentDescription = stringResource(mainFlow.textRes)
-                    )
+                    TopDestinationIcon(destination = mainFlow)
                 },
                 label = {
                     Text(

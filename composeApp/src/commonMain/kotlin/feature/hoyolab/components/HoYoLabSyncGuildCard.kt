@@ -207,20 +207,5 @@ fun FrequentQuestions(navigateToFeedback: () -> Unit) {
             )
         }
     }
-    val urlHandler = LocalUriHandler.current
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(AppTheme.spacing.s300),
-        verticalAlignment = CenterVertically
-    ) {
-        ZzzOutlineButton(
-            modifier = Modifier.weight(1f),
-            text = stringResource(Res.string.feedback)
-        ) {
-            navigateToFeedback()
-        }
-        ZzzIconButton(iconRes = Res.drawable.ic_github) {
-            urlHandler.openUriSafe("https://github.com/mrfatworm/ZZZ-Archive")
-        }
-    }
+
 }

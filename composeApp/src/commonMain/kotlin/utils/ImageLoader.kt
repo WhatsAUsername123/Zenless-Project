@@ -10,8 +10,13 @@ import com.github.panpf.sketch.Sketch
 import com.github.panpf.sketch.cache.DiskCache
 import com.github.panpf.sketch.cache.MemoryCache
 import com.github.panpf.sketch.decode.supportAnimatedWebp
+import com.github.panpf.sketch.fetch.supportComposeResources
 import com.github.panpf.sketch.request.ImageOptions
 import com.github.panpf.sketch.util.Logger
+
+fun composeResourceUri(path: String): String {
+    return "compose.resource:///$path"
+}
 
 fun newSketch(
     context: PlatformContext,
@@ -29,6 +34,7 @@ fun newSketch(
     )
     // Decode animated WebP on every platform (Android ImageDecoder / Skia).
     addComponents {
+        supportComposeResources()
         supportAnimatedWebp()
     }
     // Show a short crossfade when loading images asynchronously.

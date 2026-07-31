@@ -21,7 +21,6 @@ import ui.utils.cardPadding
 import zzzarchive.composeapp.generated.resources.Res
 import zzzarchive.composeapp.generated.resources.faction
 import zzzarchive.composeapp.generated.resources.ic_award_star
-import zzzarchive.composeapp.generated.resources.specialty
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

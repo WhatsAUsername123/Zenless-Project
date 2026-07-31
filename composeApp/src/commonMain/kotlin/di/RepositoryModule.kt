@@ -6,8 +6,6 @@ import feature.banner.data.BannerRepository
 import feature.banner.data.BannerRepositoryImpl
 import feature.cover.data.repository.CoverImageRepository
 import feature.cover.data.repository.CoverImageRepositoryImpl
-import feature.feedback.data.GoogleDocRepository
-import feature.feedback.data.GoogleDocRepositoryImpl
 import feature.forum.data.ForumRepository
 import feature.forum.data.ForumRepositoryImpl
 import feature.home.data.AssetVersionRepository
@@ -38,7 +36,6 @@ val repositoryModule = module {
     single<PixivRepository> { PixivRepositoryImpl(get()) }
     single<CoverImageRepository> { CoverImageRepositoryImpl(get(), get()) }
     single<AgentRepository> { AgentRepositoryImpl(get(), get()) }
-    single<GoogleDocRepository> { GoogleDocRepositoryImpl(get()) }
     single<HoYoLabConfigRepository> { HoYoLabConfigRepositoryImpl(get(), get()) }
     single<HoYoLabAgentRepository> { HoYoLabAgentRepositoryImpl(get()) }
     single<ForumRepository> { ForumRepositoryImpl(get()) }

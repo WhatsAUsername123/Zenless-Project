@@ -13,7 +13,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import feature.setting.components.LicenseCard
 import feature.setting.components.OtherInfoCard
 import feature.setting.components.SettingCard
 import feature.setting.model.SettingState
@@ -56,8 +55,6 @@ fun SettingScreenDual(
                     onAction(SettingAction.ClickDailyTracker)
                 }
             )
-            LicenseCard(uiState.appVersion)
-            // SponsorshipCard()
         }
 
         Column(

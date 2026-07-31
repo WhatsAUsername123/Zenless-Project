@@ -2,11 +2,11 @@ package feature.hoyolab.data.repository
 
 import feature.hoyolab.model.agent.stubMyAgentDetail
 import feature.hoyolab.model.stubMyAgentsList
+import kotlinx.coroutines.test.runTest
+import network.FakeHoYoLabHttp
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
-import kotlinx.coroutines.test.runTest
-import network.FakeHoYoLabHttp
 
 class HoYoLabAgentRepositoryTest {
     private val httpClient = FakeHoYoLabHttp()

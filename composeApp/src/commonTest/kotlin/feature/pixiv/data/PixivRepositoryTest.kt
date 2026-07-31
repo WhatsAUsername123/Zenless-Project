@@ -6,11 +6,11 @@
 package feature.pixiv.data
 
 import feature.pixiv.model.stubPixivTopicResponse
+import kotlinx.coroutines.test.runTest
+import network.FakePixivHttp
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
-import kotlinx.coroutines.test.runTest
-import network.FakePixivHttp
 
 class PixivRepositoryTest {
     private val httpClient = FakePixivHttp()

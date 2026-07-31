@@ -7,8 +7,8 @@ package database
 
 import feature.agent.data.repository.FakeAgentRepository
 import feature.cover.data.FakeCoverImageRepository
-import kotlin.test.Test
 import kotlinx.coroutines.test.runTest
+import kotlin.test.Test
 
 class UpdateDatabaseUseCaseTest {
     private val coverImageRepository = FakeCoverImageRepository()

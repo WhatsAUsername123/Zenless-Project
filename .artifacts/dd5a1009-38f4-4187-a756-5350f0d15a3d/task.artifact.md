@@ -1,0 +1,3 @@
+- [ ] Update dependencies in `composeApp/build.gradle.kts`
+- [ ] Implement `composeResourceUri` and update `newSketch` in `utils/ImageLoader.kt`
+- [ ] Verify build
