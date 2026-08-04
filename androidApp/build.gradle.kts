@@ -17,6 +17,9 @@ dependencies {
     implementation(libs.compose.uiToolingPreview)
     debugImplementation(libs.compose.uiTooling)
     testImplementation(libs.mockk)
+
+    // Resolve duplicate class ListenableFuture between Guava and listenablefuture
+    implementation(libs.guava.listenablefuture)
 }
 
 android {
@@ -38,11 +41,11 @@ android {
             dimension = "variant"
             applicationIdSuffix = ".dev"
             versionNameSuffix = " Beta"
-            resValue("string", "app_name_variant", "ZZZ Archive-Beta")
+            resValue("string", "app_name_variant", "Jane Doe ASMR")
         }
         create("Live") {
             dimension = "variant"
-            resValue("string", "app_name_variant", "ZZZ Archive")
+            resValue("string", "app_name_variant", "Jane Doe ASMR")
         }
     }
 

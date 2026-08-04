@@ -14,6 +14,7 @@ import feature.hoyolab.model.stubMyAgentsList
 import feature.setting.data.FakePreferenceRepository
 import feature.setting.domain.FakeLanguageUseCase
 import kotlinx.coroutines.test.runTest
+import okio.FileSystem
 import utils.AppFileStorage
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -26,6 +27,7 @@ class HoYoLabAgentUseCaseTest {
     private val zzzCrypto = FakeZzzCrypto()
     private val languageUseCase = FakeLanguageUseCase()
     private val fileStorage = object : AppFileStorage {
+        override val fileSystem: FileSystem get() = throw NotImplementedError()
         override fun cacheDirPath(): String = ""
     }
     private val useCase =

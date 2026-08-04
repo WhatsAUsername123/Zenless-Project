@@ -23,12 +23,15 @@ import network.ZzzHttpImpl
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import utils.AppActionsUseCase
+import utils.AppFileStorage
+import utils.IosAppFileStorage
 
 actual val platformModule =
     module {
         singleOf(::AppActionsUseCase)
         singleOf(::RoomDatabaseFactory)
         singleOf(::DataStoreFactory)
+        single<AppFileStorage> { IosAppFileStorage() }
         single<ZzzHttp> { ZzzHttpImpl(Darwin.create()) }
         single<OfficialWebHttp> { OfficialWebHttpImpl(Darwin.create()) }
         single<PixivHttp> { PixivHttpImpl(Darwin.create()) }

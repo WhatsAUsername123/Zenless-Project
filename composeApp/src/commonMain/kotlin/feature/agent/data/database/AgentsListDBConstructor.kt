@@ -7,7 +7,7 @@ package feature.agent.data.database
 
 import androidx.room.RoomDatabaseConstructor
 
-@Suppress("NO_ACTUAL_FOR_EXPECT")
+@Suppress("KotlinNoActualForExpect")
 expect object AgentsListDBConstructor : RoomDatabaseConstructor<AgentsListDB> {
     override fun initialize(): AgentsListDB
 }

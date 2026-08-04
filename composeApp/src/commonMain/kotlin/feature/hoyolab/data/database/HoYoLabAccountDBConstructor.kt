@@ -7,7 +7,7 @@ package feature.hoyolab.data.database
 
 import androidx.room.RoomDatabaseConstructor
 
-@Suppress("NO_ACTUAL_FOR_EXPECT")
+@Suppress("KotlinNoActualForExpect")
 expect object HoYoLabAccountDBConstructor : RoomDatabaseConstructor<HoYoLabAccountDB> {
     override fun initialize(): HoYoLabAccountDB
 }

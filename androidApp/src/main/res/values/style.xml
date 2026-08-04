@@ -4,7 +4,7 @@
     <style name="Theme.ZZZArchive" parent="android:Theme.Material.Light.NoActionBar" />
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">#F58A2B</item>
+        <item name="windowSplashScreenBackground">#2B2B2B</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/logo_splash_screen</item>
         <item name="postSplashScreenTheme">@style/Theme.ZZZArchive</item>
     </style>

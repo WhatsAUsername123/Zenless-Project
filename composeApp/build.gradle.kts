@@ -19,9 +19,11 @@ kotlin {
             isStatic = true
             binaryOption("bundleId", "com.mrfatworm.zzzarchive")
         }
+        dependencies.add("ksp${iosTarget.name.replaceFirstChar { it.uppercaseChar() }}", libs.androidx.room.compiler)
     }
 
     jvm("desktop")
+    dependencies.add("kspDesktop", libs.androidx.room.compiler)
 
     androidLibrary {
         namespace = "com.mrfatworm.zzzarchive.composeApp"
@@ -36,6 +38,7 @@ kotlin {
             isReturnDefaultValues = true
         }
     }
+    dependencies.add("kspAndroid", libs.androidx.room.compiler)
 
     sourceSets {
         commonMain.dependencies {
@@ -79,6 +82,8 @@ kotlin {
 
         androidMain.dependencies {
             implementation("io.coil-kt.coil3:coil-gif:3.0.4")
+            implementation(libs.androidx.compiler)
+            implementation(libs.androidx.runtime)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.compose.uiToolingPreview)
         }
@@ -94,10 +99,6 @@ kotlin {
         desktopMain.dependencies {
             implementation(libs.ktor.client.okhttp)
         }
-
-        room {
-            schemaDirectory("$projectDir/schemas")
-        }
     }
 }
 
@@ -107,10 +108,16 @@ compose.resources {
 }
 
 dependencies {
-    ksp(libs.androidx.room.compiler)
     androidRuntimeClasspath(libs.compose.uiTooling)
 }
 
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
+tasks.matching { it.name.startsWith("kspKotlinCommonMainMetadata") }.configureEach {
+    enabled = false
+}
 
 kotlinter {
     ignoreFormatFailures = false

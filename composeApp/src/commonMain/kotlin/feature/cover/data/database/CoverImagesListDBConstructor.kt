@@ -7,7 +7,7 @@ package feature.cover.data.database
 
 import androidx.room.RoomDatabaseConstructor
 
-@Suppress("NO_ACTUAL_FOR_EXPECT")
+@Suppress("KotlinNoActualForExpect")
 expect object CoverImagesListDBConstructor : RoomDatabaseConstructor<CoverImagesListDB> {
     override fun initialize(): CoverImagesListDB
 }
