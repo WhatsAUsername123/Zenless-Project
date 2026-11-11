@@ -7,13 +7,17 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
+import di.initKoin
 import feature.setting.data.PreferencesRepository
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.GlobalContext
 import utils.changePlatformLanguage
 
 class MainActivity : ComponentActivity() {
@@ -44,5 +48,12 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun AppAndroidPreview() {
+    // Initialize Koin for Android Studio Preview if KoinApplication has not been started
+    val context = LocalContext.current
+    if (GlobalContext.getOrNull() == null) {
+        initKoin {
+            androidContext(context)
+        }
+    }
     ZzzArchiveApp()
 }

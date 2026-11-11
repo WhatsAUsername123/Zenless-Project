@@ -19,6 +19,7 @@ import utils.AppFileStorage
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import feature.hoyolab.domain.debugLogPropertyIds
 
 class HoYoLabAgentUseCaseTest {
     private val repository = FakeHoYoLabAgentRepository()

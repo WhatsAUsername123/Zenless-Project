@@ -41,10 +41,13 @@ fun HomeScreenSingle(
             })
         }
         item {
-            CoverImageCard(coverImages = uiState.coverImage)
-        }
-        item {
-            NewsPagerCard(uiState.newsList)
+            HoYoLabCard(uiState.gameRecord, uiState.profileStats, uiState.signResult, onSignClick = {
+                onAction(HomeAction.Sign)
+            }, onAddAccountClick = {
+                onAction(HomeAction.NavigateTo(Screen.HoYoLabSync))
+            }, onMyAgentClick = {
+                onAction(HomeAction.NavigateTo(Screen.MyAgentsList))
+            })
         }
         item {
             RedeemCodeCard(uiState.redeemCodes) {
@@ -52,13 +55,10 @@ fun HomeScreenSingle(
             }
         }
         item {
-            HoYoLabCard(uiState.gameRecord, uiState.signResult, onSignClick = {
-                onAction(HomeAction.Sign)
-            }, onAddAccountClick = {
-                onAction(HomeAction.NavigateTo(Screen.HoYoLabSync))
-            }, onMyAgentClick = {
-                onAction(HomeAction.NavigateTo(Screen.MyAgentsList))
-            })
+            CoverImageCard(coverImages = uiState.coverImage)
+        }
+        item {
+            NewsPagerCard(uiState.newsList)
         }
         item {
             PixivCard(uiState.pixivTopics) {

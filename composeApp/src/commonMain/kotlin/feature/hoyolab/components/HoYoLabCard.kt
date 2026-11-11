@@ -5,6 +5,7 @@
 
 package feature.hoyolab.components
 
+import feature.home.presentation.HomeProfileStats
 import androidx.compose.animation.core.EaseInOut
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -85,20 +86,24 @@ val minFlowRowElementWidth = 200.dp
 @Composable
 fun HoYoLabCard(
     uiState: GameRecordState,
+    stats: HomeProfileStats,
     signResult: String?,
     onSignClick: () -> Unit,
     onAddAccountClick: () -> Unit,
     onMyAgentClick: () -> Unit
 ) {
     ContentCard(modifier = Modifier.fillMaxWidth()) {
-        Header(
-            uiState = uiState,
+        ZzzProfileHeader(
+            gameRecord = uiState,
+            level = stats.level,
             signResult = signResult,
             onSignClick = onSignClick,
             onAddAccountClick = onAddAccountClick
         )
-        Spacer(Modifier.size(AppTheme.spacing.s400))
         if (uiState.hasAccount) {
+            Spacer(Modifier.size(AppTheme.spacing.s300))
+            ZzzStatsPanel(uiState, stats)
+            Spacer(Modifier.size(AppTheme.spacing.s300))
             FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(AppTheme.spacing.s300),
                 verticalArrangement = Arrangement.spacedBy(AppTheme.spacing.s300)
@@ -386,7 +391,7 @@ fun PlayerTodoItem(
 }
 
 @Composable
-private fun SignButton(
+ fun SignButton(
     signResult: String?,
     onSignClick: () -> Unit
 ) {

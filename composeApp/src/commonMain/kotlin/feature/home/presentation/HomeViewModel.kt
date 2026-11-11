@@ -210,14 +210,16 @@ class HomeViewModel(
                                         uid = defaultAccount.uid.toString(),
                                         profileUrl = defaultAccount.profileUrl,
                                         cardUrl = defaultAccount.cardUrl
-                                    )
+                                    ),
+                                        profileStats = state.profileStats.copy(level = defaultAccount.level)
                             )
                         }
                         updateGameRecordEveryTenMinutes()
                     } else {
                         _uiState.update { state ->
                             state.copy(
-                                gameRecord = emptyGameRecordState
+                                gameRecord = emptyGameRecordState,
+                                profileStats = HomeProfileStats()
                             )
                         }
                     }

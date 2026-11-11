@@ -19,7 +19,15 @@ import feature.hoyolab.model.WeeklyTaskState
 import feature.news.model.OfficialNewsListItem
 import feature.pixiv.model.PixivArticleItem
 import feature.redeemcode.model.RedeemCode
+
+data class HomeProfileStats(
+    val level: Int? = null,
+    val activeDays: Int? = null,
+    val deadlyAssaultLayer: Int? = null,
+    val shiyuLayers: Int? = null
+)
 data class HomeState(
+    val profileStats: HomeProfileStats = HomeProfileStats(),
     val banner: BannerResponse? = null,
     val coverImage: List<CoverImageListItemEntity> = emptyList(),
     val newsList: List<OfficialNewsListItem> = emptyList(),
@@ -29,6 +37,7 @@ data class HomeState(
     val allForum: AllForumState = emptyAllForumState,
     val redeemCodes: List<RedeemCode> = emptyList()
 )
+
 
 val emptyGameRecordState =
     GameRecordState(

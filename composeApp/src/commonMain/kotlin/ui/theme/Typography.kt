@@ -5,6 +5,7 @@
 
 package ui.theme
 
+import zzzarchive.composeapp.generated.resources.inpin_hongmengti_regular
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.text.TextStyle
@@ -36,11 +37,16 @@ class Typography(
     val bodyLarge: TextStyle = TextStyle(),
     val bodyMedium: TextStyle = TextStyle(),
     val bodySmall: TextStyle = TextStyle(),
-    val scoreRegular: TextStyle = TextStyle()
+    val scoreRegular: TextStyle = TextStyle(),
+    val zzzHeading: TextStyle = TextStyle(),
+    val zzzNumber: TextStyle = TextStyle()
 )
 
 @Composable
 fun provideTypography(scale: Float = 1f): Typography {
+    val inpin = FontFamily(
+        Font(Res.font.inpin_hongmengti_regular, FontWeight.Normal)
+    )
     val noToSansTc =
         FontFamily(
             Font(Res.font.noto_sans_regular, FontWeight.Normal),
@@ -56,7 +62,7 @@ fun provideTypography(scale: Float = 1f): Typography {
     return Typography(
         displayLarge =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Black,
                 fontSize = 57.sp * scale,
                 lineHeight = 64.sp * scale,
@@ -64,49 +70,49 @@ fun provideTypography(scale: Float = 1f): Typography {
             ),
         displayMedium =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Black,
                 fontSize = 45.sp * scale,
                 lineHeight = 52.sp * scale
             ),
         displaySmall =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Black,
                 fontSize = 36.sp * scale,
                 lineHeight = 44.sp * scale
             ),
         headlineLarge =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Bold,
                 fontSize = 32.sp * scale,
                 lineHeight = 40.sp * scale
             ),
         headlineMedium =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Bold,
                 fontSize = 28.sp * scale,
                 lineHeight = 36.sp * scale
             ),
         headlineSmall =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp * scale,
                 lineHeight = 32.sp * scale
             ),
         titleLarge =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Medium,
                 fontSize = 22.sp * scale,
                 lineHeight = 28.sp * scale
             ),
         titleMedium =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Medium,
                 fontSize = 16.sp * scale,
                 lineHeight = 24.sp * scale,
@@ -114,7 +120,7 @@ fun provideTypography(scale: Float = 1f): Typography {
             ),
         titleSmall =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Medium,
                 fontSize = 14.sp * scale,
                 lineHeight = 20.sp * scale,
@@ -122,7 +128,7 @@ fun provideTypography(scale: Float = 1f): Typography {
             ),
         labelLarge =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Bold,
                 fontSize = 16.sp * scale,
                 lineHeight = 16.sp * scale,
@@ -130,7 +136,7 @@ fun provideTypography(scale: Float = 1f): Typography {
             ),
         labelMedium =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Bold,
                 fontSize = 14.sp * scale,
                 lineHeight = 14.sp * scale,
@@ -138,7 +144,7 @@ fun provideTypography(scale: Float = 1f): Typography {
             ),
         labelSmall =
             TextStyle(
-                fontFamily = noToSansTc,
+                fontFamily = inpin,
                 fontWeight = FontWeight.Medium,
                 fontSize = 12.sp * scale,
                 lineHeight = 12.sp * scale,
@@ -173,6 +179,19 @@ fun provideTypography(scale: Float = 1f): Typography {
                 fontFamily = bitCountGridDouble,
                 fontWeight = FontWeight.Light,
                 fontSize = 64.sp * scale
+            ),
+        zzzHeading =
+            TextStyle(
+                fontFamily = inpin,
+                fontWeight = FontWeight.Bold,
+                fontSize = 22.sp * scale,
+                lineHeight = 28.sp * scale
+            ),
+        zzzNumber =
+            TextStyle(
+                fontFamily = inpin,
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp * scale
             )
     )
 }

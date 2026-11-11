@@ -10,6 +10,8 @@ import androidx.compose.ui.graphics.Color
 
 @Stable
 class ColorScheme(
+    val accent: Color = Color.Unspecified,
+    val onAccent: Color = Color.Unspecified,
     val primary: Color = Color.Unspecified,
     val onPrimary: Color = Color.Unspecified,
     val primaryContainer: Color = Color.Unspecified,
@@ -44,10 +46,13 @@ class ColorScheme(
     val imageTagContainer: Color = Color.Unspecified,
     val imageOnTagContainer: Color = Color.Unspecified,
     val itemVariant: Color = Color(0x10878787)
+
 )
 
 internal val darkScheme =
     ColorScheme(
+        accent = Color(0xFFFFDE00),    // sample the real hex from the HoYoLAB page
+        onAccent = Color(0xFF0D0D0D),
         primary = primary500,
         onPrimary = primary950,
         primaryContainer = primary900,
@@ -85,6 +90,8 @@ internal val darkScheme =
 
 internal val lightScheme =
     ColorScheme(
+        accent = Color(0xFFFFDE00),
+        onAccent = Color(0xFF111111),
         primary = primary600,
         onPrimary = primary50,
         primaryContainer = primary200,

@@ -28,6 +28,7 @@ class HoYoLabAgentUseCase(
         val lToken = zzzCrypto.decryptData(account.lToken)
         val ltUid = zzzCrypto.decryptData(account.ltUid)
         val uid = account.uid
+
         val result = repository.requestPlayerAgentList(
             languageCode = languageCode,
             uid = uid,
@@ -35,16 +36,20 @@ class HoYoLabAgentUseCase(
             lToken = lToken,
             ltUid = ltUid
         )
-        result.fold(onSuccess = { list ->
-            val resolved = list.map { item ->
-                item.copy(
-                    imageUrl = resolveAgentImageUri(item.name, item.imageUrl, fileStorage)
-                )
+
+        return result.fold(
+            onSuccess = { list ->
+                val resolved = list.map { item ->
+                    item.copy(
+                        imageUrl = resolveAgentImageUri(item.name, item.imageUrl, fileStorage)
+                    )
+                }
+                Result.success(resolved)
+            },
+            onFailure = {
+                Result.failure(it)
             }
-            return Result.success(resolved)
-        }, onFailure = {
-            return Result.failure(it)
-        })
+        )
     }
 
     suspend fun getAgentDetail(agentId: Int): Result<MyAgentDetail> {
@@ -55,19 +60,24 @@ class HoYoLabAgentUseCase(
         val lToken = zzzCrypto.decryptData(account.lToken)
         val ltUid = zzzCrypto.decryptData(account.ltUid)
         val uid = account.uid
-        val result =
-            repository.requestPlayerAgentDetail(
-                languageCode = languageCode,
-                uid = uid,
-                region = region,
-                lToken = lToken,
-                ltUid = ltUid,
-                agentId = agentId
-            )
-        result.fold(onSuccess = {
-            return Result.success(it)
-        }, onFailure = {
-            return Result.failure(it)
-        })
+
+        val result = repository.requestPlayerAgentDetail(
+            languageCode = languageCode,
+            uid = uid,
+            region = region,
+            lToken = lToken,
+            ltUid = ltUid,
+            agentId = agentId
+        )
+
+        return result.fold(
+            onSuccess = {
+                debugLogPropertyIds(it) // Temporary debug logging
+                Result.success(it)
+            },
+            onFailure = {
+                Result.failure(it)
+            }
+        )
     }
 }
